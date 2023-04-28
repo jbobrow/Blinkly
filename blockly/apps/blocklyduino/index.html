@@ -234,23 +234,23 @@ function init() {
       overflow: scroll;
     }
     button {
-      padding: 1px 1em;
-      font-size: 90%;
-      border-radius: 4px;
+      padding: 5px 10px;
+      font-size: 1em;
+      border-radius: 0.2em;
       border: 1px solid #ddd;
       background-color: #eee;
-      color: black;
+      color: #222222;
     }
     button.launch {
-      border: 1px solid #d43;
-      background-color: #d43;
+      border: 1px solid #2389FC;
+      background-color: #2389FC;
       color: white;
     }
     button:active {
-      border: 1px solid blue !important;
+      background-color: #2389FC;
     }
     button:hover {
-      box-shadow: 2px 2px 5px #888;
+      background-color: #ddd;
     }
   </style>
 </head>
@@ -272,9 +272,9 @@ function init() {
               <!-- <button type="button" onclick="uploadClick()">Upload</button> -->
               <!-- <button type="button" onclick="resetClick()">Reset</button> -->
               <!-- <button onclick="discard()">Discard</button> -->
-              <!-- <button onclick="saveCode()">Save Arduino Code</button> -->
-              <!-- <button onclick="save()">Save XML</button> -->
-              <!-- <button id="fakeload">Load XML</button> -->
+              <button onclick="save()">Save</button>
+              <button id="fakeload">Open</button>
+              <button onclick="saveCode()">Export</button>
               <!-- <input type="file" id="load" style="display: none;"/> -->
               <!--button class="launch" onclick="runJS()">Run Program</button-->
             <!-- </td> -->
