@@ -1,31 +1,28 @@
-### Welcome to BlocklyDuino
+### Welcome to Blinkly (WIP)
 
-> Check [BlockDuino v2](https://github.com/BlocklyDuino/BlocklyDuino-v2)
+All of the hard-work that makes this possible is done by the creators of Blockly, and BlocklyDuino (among other C/C++) ports of Block-based programming. Blinkly is simply a tool that allows Blinks owners to create their own games using a Block-based programming language, and this is achieved by creating a generator that can reproduce the limited language of Blinks. I look forward to making the UI/UX refined to match the usability and aesthetics of Blinks as well 😘.
 
-BlocklyDuino is a **web-based visual programming editor for [Arduino](http://www.arduino.cc/)**.
+> See [BlocklyDuino](https://github.com/BlocklyDuino/BlocklyDuino)
 
-BlocklyDuino is based on [Blockly](https://developers.google.com/blockly/), the web-based, graphical programming editor. Provide static type language blocks and code generators for Arduino programming.
-
-BlocklyDuino also support [Grove](http://www.seeedstudio.com/wiki/GROVE_System) blocks to easily get started with microcontroller-based experimentation and learning.
+Blinkly is based on [Blockly](https://developers.google.com/blockly/), the web-based, graphical programming editor. Provide static type language blocks and code generators for Blinks programming.
 
 ### Features
 
-* Programming Arduino with visually drag and drop code blocks
-* Generate fully compatible Arduino source code
-* Interactive Arduino board with 10+ predefined Grove sensor blocks
-* Load different on-site examples with url parameters
+* Programming Blinks with visually drag and drop code blocks
+* Generate fully compatible Blinks source code
+* Load example games to see how Blinkly can be used to create the existing games on Blinks (sometimes simplified versions for clarity)
 
 ### Demo
 
-BlocklyDuino is a web tool. You can give it a try at
-[Web](http://blocklyduino.github.io/BlocklyDuino/blockly/apps/blocklyduino/) to see the working BlocklyDuino.
+Blinkly is a web tool. You can give it a try at
+[Web](http://jbobrow.github.io/Blinkly/blockly/apps/blocklyduino/) to see the working Blinkly.
 
-You can link directly to examples
-* [demo 1](http://blocklyduino.github.io/BlocklyDuino/blockly/apps/blocklyduino/index.html?url=examples/blink.xml) make default LED blink
-* [demo 2](http://blocklyduino.github.io/BlocklyDuino/blockly/apps/blocklyduino/index.html?url=examples/servo_potentio.xml) control servo with potentio rotator
-* [demo 3](http://blocklyduino.github.io/BlocklyDuino/blockly/apps/blocklyduino/index.html?url=examples/click_color.xml) click button to change LED colors
+You can link directly to example games
+* [WHAM!](http://blocklyduino.github.io/BlocklyDuino/blockly/apps/blocklyduino/index.html?url=examples/wham.xml)
+* [Berry](http://blocklyduino.github.io/BlocklyDuino/blockly/apps/blocklyduino/index.html?url=examples/berry.xml)
+* [Alchematch](http://blocklyduino.github.io/BlocklyDuino/blockly/apps/blocklyduino/index.html?url=examples/alchematch.xml)
 
-Or watch the [video demos](http://www.youtube.com/watch?v=_swiyXcUvNY)
+Or watch the [video demos]() __Coming Soon__
 
 ### Run locally on your web browser
 If you want to install it locally. Get code from github and open `blockly/apps/blocklyduino/index.html` in your browser. 
