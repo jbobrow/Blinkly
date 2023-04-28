@@ -16,7 +16,7 @@
  * List of tab names.
  * @private
  */
-var TABS_ = ['blocks', 'arduino', 'xml'];
+var TABS_ = ['blocks', 'arduino'];
 
 var selected = 'blocks';
 
@@ -25,26 +25,6 @@ var selected = 'blocks';
  * @param {string} clickedName Name of tab clicked.
  */
 function tabClick(clickedName) {
-  // If the XML tab was open, save and render the content.
-  if (document.getElementById('tab_xml').className == 'tabon') {
-    var xmlTextarea = document.getElementById('content_xml');
-    var xmlText = xmlTextarea.value;
-    var xmlDom = null;
-    try {
-      xmlDom = Blockly.Xml.textToDom(xmlText);
-    } catch (e) {
-      var q =
-          window.confirm('Error parsing XML:\n' + e + '\n\nAbandon changes?');
-      if (!q) {
-        // Leave the user on the XML tab.
-        return;
-      }
-    }
-    if (xmlDom) {
-      Blockly.mainWorkspace.clear();
-      Blockly.Xml.domToWorkspace(Blockly.mainWorkspace, xmlDom);
-    }
-  }
 
   if (document.getElementById('tab_blocks').className == 'tabon') {
     Blockly.mainWorkspace.setVisible(false);
@@ -180,7 +160,7 @@ function init() {
     }
     body {
       background-color: #fff;
-      font-family: sans-serif;
+      font-family: "HelveticaNeue", sans-serif;
       margin: 0;
       overflow: hidden;
     }
@@ -287,16 +267,8 @@ function init() {
           <tr id="tabRow" height="1em">
             <td id="tab_blocks" class="tabon" onclick="tabClick('blocks')">Blocks</td>
             <td class="tabmin">&nbsp;</td>
-            <!--td id="tab_javascript" class="taboff" onclick="tabClick(this.id)">JavaScript</td>
-            <td class="tabmin">&nbsp;</td-->
-            <!--td id="tab_dart" class="taboff" onclick="tabClick(this.id)">Dart</td>
+            <td id="tab_arduino" class="taboff" onclick="tabClick('arduino')">Blinks code for Arduino(C++)</td>
             <td class="tabmin">&nbsp;</td>
-            <td id="tab_python" class="taboff" onclick="tabClick(this.id)">Python</td>
-            <td class="tabmin">&nbsp;</td-->
-            <td id="tab_arduino" class="taboff" onclick="tabClick('arduino')">Arduino</td>
-            <td class="tabmin">&nbsp;</td>
-            <td id="tab_xml" class="taboff" onclick="tabClick('xml')">XML</td>
-            <td class="tabmax">
               <button type="button" onclick="uploadClick()">Upload</button>
               <button type="button" onclick="resetClick()">Reset</button>
               <button onclick="discard()">Discard</button>
@@ -319,6 +291,7 @@ function init() {
   <textarea id="content_xml" class="content" wrap="off"></textarea>
 
   <xml id="toolbox" style="display: none">
+    <sep></sep>
     <category name="Logic">
       <block type="controls_if"></block>
       <block type="logic_compare"></block>
@@ -326,6 +299,7 @@ function init() {
       <block type="logic_negate"></block>
       <block type="logic_null"></block>
     </category>
+    <sep></sep>
     <category name="Control">
       <block type="base_delay">
         <value name="DELAY_TIME">
@@ -348,6 +322,7 @@ function init() {
       </block>
       <block type="controls_whileUntil"></block>
     </category>
+    <sep></sep>
     <category name="Math">
       <block type="math_number"></block>
       <block type="math_arithmetic"></block>
@@ -359,92 +334,15 @@ function init() {
         </value>
       </block>
     </category>
+    <sep></sep>
     <category name="Text">
       <block type="text"></block>
     </category>
+    <sep></sep>
     <category name="Variables" custom="VARIABLE"></category>
+    <sep></sep>
     <category name="Functions" custom="PROCEDURE"></category>
     <sep></sep>
-    <category name="Input/Output">
-      <block type="inout_highlow"></block>
-      <block type="inout_digital_write"></block>
-      <block type="inout_digital_read"></block>
-      <block type="inout_analog_write">
-        <value name="NUM">
-          <block type="math_number">
-            <field name="NUM">0</field>
-          </block>
-        </value>
-      </block>
-      <block type="inout_analog_read"></block>
-      <block type="serial_print">
-        <value name="CONTENT">
-          <block type="text">
-            <field name="TEXT"></field>
-          </block>
-        </value>
-      </block>
-      <block type="inout_tone">
-        <value name="NUM">
-          <block type="math_number">
-            <field name="NUM">440</field>
-          </block>
-        </value>
-      </block>
-      <block type="inout_notone"></block>
-      <block type="inout_buildin_led"></block>
-    </category>
-    <category name="Servo">
-      <block type="servo_move">
-        <value name="DEGREE">
-          <block type="math_number">
-            <field name="NUM">0</field>
-          </block>
-        </value>
-      </block>
-      <block type="servo_read_degrees"></block>
-    </category>
-    <category name="Grove Analog">
-      <block type="grove_rotary_angle"></block>
-      <block type="grove_temporature_sensor"></block>
-      <block type="grove_sound_sensor"></block>
-      <block type="grove_thumb_joystick"></block>
-    </category>
-    <category name="Grove">
-      <block type="grove_led"></block>
-      <block type="grove_button"></block>
-      <block type="grove_relay"></block>
-      <block type="grove_tilt_switch"></block>
-      <block type="grove_piezo_buzzer"></block>
-      <block type="grove_pir_motion_sensor"></block>
-      <block type="grove_line_finder"></block>
-      <block type="grove_rgb_led"></block>
-      <block type="grove_ultrasonic_ranger"></block>
-    </category>
-    <category name="Grove LCD">
-      <block type="grove_serial_lcd_print">
-        <value name="TEXT">
-          <block type="text">
-            <field name="TEXT"></field>
-          </block>
-        </value>
-        <value name="TEXT2">
-          <block type="text">
-            <field name="TEXT"></field>
-          </block>
-        </value>
-        <value name="DELAY_TIME">
-          <block type="math_number">
-            <field name="NUM">1000</field>
-          </block>
-        </value>
-      </block>
-      <block type="grove_serial_lcd_power"></block>
-      <block type="grove_serial_lcd_effect"></block>
-    </category>
-    <category name="Grove Motor">
-      <block type="grove_motor_shield"></block>
-    </category>
   </xml>
 </body>
 </html>
