@@ -14,8 +14,7 @@ Blinkly is based on [Blockly](https://developers.google.com/blockly/), the web-b
 
 ### Demo
 
-Blinkly is a web tool. You can give it a try at
-[Web](http://jbobrow.github.io/Blinkly/blockly/apps/blocklyduino/) to see the working Blinkly.
+Blinkly is a web tool. You can give it a try [here](http://jbobrow.github.io/Blinkly/blockly/apps/blocklyduino/) to see the working Blinkly.
 
 You can link directly to example games
 * [WHAM!](http://blocklyduino.github.io/BlocklyDuino/blockly/apps/blocklyduino/index.html?url=examples/wham.xml)
